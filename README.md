@@ -69,7 +69,7 @@ python scripts/0_data_collection_and_preprocessing.py
 ```
 python scripts/1_labeling_senir.py
 ```
-- Uses **Mistral-7B** to label each conversation with software entities, intent categories, and resolution status  
+- Uses **Mixtral-8x7B** to label each conversation with software entities, intent categories, and resolution status  
 - Produces `labeled_dataset.json` in `data/processed/`
 
 ### 3. Feature Extraction
