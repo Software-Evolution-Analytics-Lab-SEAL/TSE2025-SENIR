@@ -1,1 +1,2170 @@
-
+[
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Nov2019-Jan2020",
+        "start_date": "2019-11-01T19:36:28.998000",
+        "end_date": "2019-12-18T09:44:57.362000",
+        "messages": [
+            {
+                "conversation_id": "33",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2019-12-17T03:55:25.661000",
+                        "user": "Devam",
+                        "text": "Hi are there any projects that heavily uses `funcool/cats` or any other monad library? Would like to learn from it about how they use it."
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2019-12-17T03:57:39.108000",
+                        "user": "Devam",
+                        "text": "Particularly on how far they integrate with normal clojure code."
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2019-12-17T17:06:48.269000",
+                        "user": "Neal",
+                        "text": "i'm doing a small hackernewsish thing to better learn clojure. is making a protocol for query insertion and specs and records for posts/users and stuffs good model. Also when to use maps vs records? And though it doesn't matter for a small project do they have significant performance differences?"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2019-12-17T17:49:55.272000",
+                        "user": "Veada",
+                        "text": "performancewise records create fields for their explicit keys so you're likely to get better read performance than retrieving a value from a map"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2019-12-17T17:57:54.978000",
+                        "user": "Veada",
+                        "text": "as far as the protocols go it sounds like the things you're talking about using protocols for aren't all that different from core functions like filter and conj so I'm not sure if they'd be warranted  it seems like query and insertion would be on collections of things rather than the things themselves"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2019-12-18T09:44:57.362000",
+                        "user": "Florentino",
+                        "text": "@feroxide you probably don't need records. stick with maps until you're sure you need otherwise"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Feb2020-Apr2020",
+        "start_date": "2020-02-15T23:02:46.362000",
+        "end_date": "2020-04-26T21:17:48.937000",
+        "messages": [
+            {
+                "conversation_id": "5",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-03-15T19:50:05.501000",
+                        "user": "Rezki",
+                        "text": "hey guys i want to add two lists as argument:user=> (defn share [a b] (a b))but if i call it i get:user=> (share  #_=> [1 2] [1 2])Execution error (IllegalArgumentException) at user/share (REPL:1).Key must be integer"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-03-15T19:51:09.019000",
+                        "user": "Rezki",
+                        "text": "None"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-03-15T19:51:33.563000",
+                        "user": "Rezki",
+                        "text": "anyone any idea what im doing wrong here?"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-03-15T19:51:44.858000",
+                        "user": "Rezki",
+                        "text": "can't i just pass two lists?"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-03-15T19:52:33.083000",
+                        "user": "Rezki",
+                        "text": "is there something special about passing lists in clojure?"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-03-15T20:44:02.904000",
+                        "user": "Rezki",
+                        "text": "i think i got it i have to give list return type"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Aug2020-Oct2020",
+        "start_date": "2020-08-01T14:31:40.017000",
+        "end_date": "2020-10-25T03:22:35.633000",
+        "messages": [
+            {
+                "conversation_id": "6",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-08-10T20:58:15.413000",
+                        "user": "Mehana",
+                        "text": "Hello i have a question :Code :```clojure(def z (reduce str (take 3 (cycle [\".\"])))) (println z\"\"z)```Console :```...  ...```How do you not have a space between the ... and the  ? Thk"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-08-10T20:59:34.487000",
+                        "user": "Jayansh",
+                        "text": "```user=> (println ...  ...\")...  ...niluser=> (println (str ...  ...\"))......nil```"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-08-10T21:00:21.409000",
+                        "user": "Jayansh",
+                        "text": "`println` takes multiple args and prints each of them separated by spaces str takes multiple args and combines them into a single string without spaces."
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-08-10T21:00:42.371000",
+                        "user": "Jayansh",
+                        "text": "So make a single string using `str` and have `println` print that."
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-08-10T21:13:11.609000",
+                        "user": "Mehana",
+                        "text": "Ok Thanks ! And how can I add +2 to the variable ``l`` in this loop ?```clojure(def n 5) ; readline(def l 1)(loop [i n] (when (> i 0) (println i) (recur ( i 1)) ))```"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-08-10T21:20:46.651000",
+                        "user": "Emersen",
+                        "text": "so just use str"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-08-10T21:24:39.679000",
+                        "user": "Mehana",
+                        "text": "We have a funny little concept where we want to write a code allowing the creation of a tree in as many languages as possible : https://github.com/VirtualRoyaume/SapinAnd so I\\'m trying to do it in ClojureThe final result :```........................................```My actual code in Clojure :```clojure(def n 5) ; readline(def l 1)(loop [i n] (when (> i 0) (println i) (recur ( i 1)) )) (def z (reduce str (repeat n .\")))(println (str z  z))```"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Feb2020-Apr2020",
+        "start_date": "2020-02-15T23:02:46.362000",
+        "end_date": "2020-04-26T21:17:48.937000",
+        "messages": [
+            {
+                "conversation_id": "26",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-03-31T03:16:15.723000",
+                        "user": "Amell",
+                        "text": "Does anybody see a reason why `(map #(loadmap %) data` isn\\'t getting called here?```clojure(defn loadmaps [filename] (log/debug Loading maps from filename) (if (.exists (io/file filename)) (let [xs (get (json/parsestream (clojure.java.io/reader filename)) data\") data (mapv #(second %) xs)] (log/debug data:  data) (map #(loadmap %) data)) (log/error filename does not exist\")) (log/info Finished loading map data\"))```"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-03-31T03:18:15.140000",
+                        "user": "Tannen",
+                        "text": "For the sake of it wrap that map in a `doall`"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-03-31T03:34:43.066000",
+                        "user": "Tannen",
+                        "text": "`(doall (map #(loadmap %) data))`"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-03-31T03:35:09.307000",
+                        "user": "Tannen",
+                        "text": "Otherwise what's it actually returning?"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-03-31T03:35:36.201000",
+                        "user": "Tannen",
+                        "text": "If you call `(loadmaps test.edn\")` what\\'s the return?"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-03-31T03:42:00.847000",
+                        "user": "Amell",
+                        "text": "Here\\'s the content of loadmap. ```clojure(defn loadmap [input] (log/debug loadmap called on  input) (let [data {:id (Integer/parseInt (get input MapId\")) :name (get input MapName\") :image (getin input [\"image full\"])}] (try (log/debug Loading map: (:name data)) (db/insertmap! data) (catch Exception e (log/error Couldn\\'t insert map ID:  (:id data)) (log/error e)))))```"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-03-31T03:42:16.552000",
+                        "user": "Amell",
+                        "text": "So even that first log/debug is never running"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-03-31T03:42:22.298000",
+                        "user": "Amell",
+                        "text": "Trying the doall rn"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2020-03-31T03:44:00.809000",
+                        "user": "Amell",
+                        "text": "Looks like that worked"
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2020-03-31T03:46:19.192000",
+                        "user": "Amell",
+                        "text": "So since loadmap is primarily side effects it's not fully realized unless wrapped in a doall?"
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2020-03-31T06:51:49.929000",
+                        "user": "Tannen",
+                        "text": "Unless you're observing it directly then yes it won't realise any of it"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "May2020-July2020",
+        "start_date": "2020-05-06T05:35:13.419000",
+        "end_date": "2020-07-30T21:37:35.713000",
+        "messages": [
+            {
+                "conversation_id": "43",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-07-07T17:36:24.045000",
+                        "user": "Maddison",
+                        "text": "When exactly do ring sessions get deleted? I have a log in via oauth2 thing on a website and before redirecting to the authorisation url I store a few things in the session. But after the login is completed and redirected to my website the previous session is gone"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-07-07T17:36:54.331000",
+                        "user": "Maddison",
+                        "text": "For some reason it worked for a little while until I tampered with it again"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-07-07T17:37:18.197000",
+                        "user": "Maddison",
+                        "text": "I tried to restore everything as before but it doesn't work anymore the session is gone every time"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-07-08T08:41:15.974000",
+                        "user": "Maddison",
+                        "text": "Sorry I'm still rather new to webdev and ring. What are the implications of being http only or how does it affect this particular situation? @lsenjov"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-07-08T08:49:15.384000",
+                        "user": "Maddison",
+                        "text": ":session :cookieattrs :httponly was indeed set to true I dissociated it but still same result"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-07-08T08:49:31.122000",
+                        "user": "Savvi",
+                        "text": "My bad wrong thing it needs to be lax instead of strict"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-07-08T08:49:42.344000",
+                        "user": "Maddison",
+                        "text": ":samesite?"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-07-08T08:49:55.575000",
+                        "user": "Savvi",
+                        "text": "SameSite needs to be lax or the cookie doesn't persist"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2020-07-08T08:50:43.289000",
+                        "user": "Maddison",
+                        "text": "Ah I've reckoned something like this. Is it as I suspect: the cookie is deleted/overwritten once you leave the site?"
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2020-07-08T08:51:28.823000",
+                        "user": "Maddison",
+                        "text": "Because I couldn't find any docs for those config options."
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2020-07-08T08:52:38.151000",
+                        "user": "Maddison",
+                        "text": "tysm. This worked. But do you have an idea where this is documented?"
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2020-07-08T08:56:12.493000",
+                        "user": "Savvi",
+                        "text": "https://developer.mozilla.org/enUS/docs/Web/HTTP/Cookies"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2020-07-08T08:56:19.324000",
+                        "user": "Savvi",
+                        "text": "Check SameSite"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2020-07-08T08:57:22.242000",
+                        "user": "Maddison",
+                        "text": "Thank you!"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Nov2019-Jan2020",
+        "start_date": "2019-11-01T19:36:28.998000",
+        "end_date": "2019-12-18T09:44:57.362000",
+        "messages": [
+            {
+                "conversation_id": "22",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2019-11-14T21:23:02.420000",
+                        "user": "Chandru",
+                        "text": "What's better/more idiomatic?`(apply + coll)` or `(reduce + coll)`?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2019-11-14T21:30:55.671000",
+                        "user": "Veada",
+                        "text": "my opinion is apply because `+` is variadic and apply just says says call this function on all the things where reduce says (essentially) keep applying this function one result at a time"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2019-11-14T21:34:21.485000",
+                        "user": "Brix",
+                        "text": "Or at least implemented as a loop internally."
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2019-11-14T21:35:13.717000",
+                        "user": "Brix",
+                        "text": "Oh huh it's implemented using reduce."
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2019-11-14T21:35:17.330000",
+                        "user": "Brix",
+                        "text": "Fancy that."
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2019-11-14T21:35:58.658000",
+                        "user": "Veada",
+                        "text": "in the case of `+` as a variadic function the difference is probably negligible but with a function like `str` the variadic form uses a StringBuilder to build up the string and then finally create one String whereas reduce would keep creating new StringBuilders and Strings for each reduction"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2019-11-14T21:36:23.105000",
+                        "user": "Brix",
+                        "text": "Oh yea you'd almost certainly want to apply str."
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2019-11-14T21:37:16.387000",
+                        "user": "Brix",
+                        "text": "My concern was more born out of variadic `+` causing a stack overflow."
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2019-11-14T21:38:01.204000",
+                        "user": "Brix",
+                        "text": "Any time I see stuff using apply on large collections on the jvm I get a little nervous tbh."
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2019-11-14T21:38:27.522000",
+                        "user": "Brix",
+                        "text": "Easy for a slightly naive implementation to blow up."
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2019-11-14T21:39:57.203000",
+                        "user": "Brix",
+                        "text": "Looks like the variadic str actually uses an inline `recur`sive anonymous function and a string builder."
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2019-11-14T21:41:48.148000",
+                        "user": "Veada",
+                        "text": "yeah  I imagine that's why the author avoided implementing it in terms of reduce"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2019-11-14T23:09:26.169000",
+                        "user": "Abbigail",
+                        "text": "I have a lot of faith in Rich having thought of that"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2019-11-15T04:19:05.390000",
+                        "user": "Brix",
+                        "text": "Sure I'd imagine just about anything in clojure's stdlib is fair game."
+                    },
+                    {
+                        "message_number": "15",
+                        "ts": "2019-11-15T16:23:36.716000",
+                        "user": "Florentino",
+                        "text": "one aspect of `reduce`'s usage is generalise this binary function to any number of arguments so in cases where the function can already take any number of arguments `apply` more precisely matches the intent i think. also of course it means you get to use the function author's intended semantics for that case as with `str`"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Aug2020-Oct2020",
+        "start_date": "2020-08-01T14:31:40.017000",
+        "end_date": "2020-10-25T03:22:35.633000",
+        "messages": [
+            {
+                "conversation_id": "4",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-08-02T14:23:13.562000",
+                        "user": "Emersen",
+                        "text": "java 1.6 isn't supported past clojure 1.7"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-08-02T14:23:56.443000",
+                        "user": "Emersen",
+                        "text": "for pure clojure look at datahike if you're willing to learn datalog"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-08-02T14:24:41.775000",
+                        "user": "Emersen",
+                        "text": "i see johnny mentioned it already"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-08-02T14:26:25.592000",
+                        "user": "Tashon",
+                        "text": "It's kinda mindblowing to me that clojure actually used to work with java 6"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-08-02T14:26:41.797000",
+                        "user": "Tashon",
+                        "text": "Considering `invokedynamic` didn't exist yet"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-08-02T14:27:13.772000",
+                        "user": "Emersen",
+                        "text": "yeah invokedynamic support was only added in clojure 1.8"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-08-04T11:47:28.155000",
+                        "user": "Kaled",
+                        "text": "...I didn't know that exists. Neat"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Feb2020-Apr2020",
+        "start_date": "2020-02-15T23:02:46.362000",
+        "end_date": "2020-04-26T21:17:48.937000",
+        "messages": [
+            {
+                "conversation_id": "17",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-03-21T23:49:08.218000",
+                        "user": "Ludwig",
+                        "text": "Hi all! How would you import a library like this https://github.com/lambdaisland/trikl using leiningen? It's made with deps.edn not on clojars..."
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-03-22T00:30:27.486000",
+                        "user": "Alipio",
+                        "text": "Not to be superpedantic but that's sort of not a library in the sense that it doesn't appear to be packaged for distribution. You could clone that repo build it and deploy it to a local maven repo or you could create some version of a checkout dependency (<https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#checkoutdependencies>)"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-03-22T00:30:46.548000",
+                        "user": "Alipio",
+                        "text": "those are the ideas that come to mind off the top of my head"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-03-22T01:55:32.368000",
+                        "user": "Ludwig",
+                        "text": "@SlashDevSlashRandom I agree with you looks like it doesn't want to be used xD... anyway thanks for the tips!"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-03-22T01:59:22.091000",
+                        "user": "Alistair",
+                        "text": "leiningen plugins also provide ways to use gitbased dependencies"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-03-22T01:59:38.809000",
+                        "user": "Alistair",
+                        "text": "Also clj deps are designed to be used from git"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-03-22T02:00:07.779000",
+                        "user": "Alistair",
+                        "text": "I'd definitely say a readme that full wants to be used though"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-03-22T02:00:56.257000",
+                        "user": "Ludwig",
+                        "text": "> Also clj deps are designed to be used from git@srasu oh i didn't know that"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2020-03-22T02:02:23.660000",
+                        "user": "Alistair",
+                        "text": "Yes so for a long time the cljnew tool for the tools.deps ecosystem was done entirely out of git."
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2020-03-22T02:05:43.833000",
+                        "user": "Ludwig",
+                        "text": "nice! I'll read about that and try it out... thanks!"
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2020-03-22T02:38:02.977000",
+                        "user": "Alistair",
+                        "text": "Leiningen plugins require using leiningen yeah unfortunately they aren't crosscompatible with the deps.edn ecosystem. If you really need git dependencies and leinengen plugins try this one: https://github.com/reifyhealth/leingitdown"
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2020-03-22T02:51:32.589000",
+                        "user": "Ludwig",
+                        "text": "it worked with leingitdown too! cool! =D```:dependencies [[org.clojure/clojure 1.10.0\"] [lambdaisland/trikl 8c27a347a96ce66762510f0a87cca66e5713bdec\"]]:plugins [[reifyhealth/leingitdown 0.3.6\"]]:repositories [[\"publicgithub {:url git://github.com\"}]]```"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2020-03-22T18:07:04.537000",
+                        "user": "Ludwig",
+                        "text": "I wish dependency management was easier/clearer... it may be just me but I always have problems trying to put stuff together not just clojure but in general... nowadays i'm just tired and endup not doing anything \ud83d\ude1b"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2020-03-22T18:07:12.317000",
+                        "user": "Ludwig",
+                        "text": "but I'm glad I asked... learned something new haha"
+                    },
+                    {
+                        "message_number": "15",
+                        "ts": "2020-03-22T18:08:28.326000",
+                        "user": "Ludwig",
+                        "text": "though I understand it's a hard problem to solve definitively... i don't know..."
+                    },
+                    {
+                        "message_number": "16",
+                        "ts": "2020-03-22T18:17:25.008000",
+                        "user": "Alistair",
+                        "text": "Yeah dependency management was part of what the clojure commandline tools are supposed to help resolve."
+                    },
+                    {
+                        "message_number": "17",
+                        "ts": "2020-03-22T18:24:04.820000",
+                        "user": "Ludwig",
+                        "text": "i think it helps... but when things go wrong i get lost \ud83d\ude1b i'll study a bit more about java dependencies in general leiningen and deps.edn to see what i find"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "May2020-July2020",
+        "start_date": "2020-05-06T05:35:13.419000",
+        "end_date": "2020-07-30T21:37:35.713000",
+        "messages": [
+            {
+                "conversation_id": "32",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-06-16T06:56:15.369000",
+                        "user": "Maddison",
+                        "text": "Any recommendations for writing TCP servers with Clojure? I've only looked at this library so farhttps://github.com/ztellman/aleph"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-06-16T13:59:23.070000",
+                        "user": "Maddison",
+                        "text": "Oh that might be a good call"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-06-16T13:59:33.166000",
+                        "user": "Maddison",
+                        "text": "There seems to be an interop library for clojure as well"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-06-16T14:00:01.252000",
+                        "user": "Maddison",
+                        "text": "`nio` uses some sort of async channels right?"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-06-16T14:01:07.485000",
+                        "user": "Maddison",
+                        "text": "Would be incredibly useful to find something that translates them to core.async channels or sth"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-06-19T06:57:24.041000",
+                        "user": "Tiara",
+                        "text": "ask on #cider on slackbozidar (main maintainer) is always therehe knows the answer to this.And if you do find it please share cause i was always recompiling \ud83d\ude42"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Feb2020-Apr2020",
+        "start_date": "2020-02-15T23:02:46.362000",
+        "end_date": "2020-04-26T21:17:48.937000",
+        "messages": [
+            {
+                "conversation_id": "40",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-04-25T12:52:23.706000",
+                        "user": "Thorne",
+                        "text": "The following I do not understand. Can some one point me in the right direction please?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-04-25T12:52:35.343000",
+                        "user": "Thorne",
+                        "text": "```cron.routes=> (keys (yaml/fromfile test.yaml\"))(:a)cron.routes=> (defn loadsecrets2 [] (yaml/fromfile test.yaml\"))#\\'cron.routes/loadsecrets2cron.routes=> (loadsecrets2)#ordered/map ([:a #ordered/map ([:level p7thrv6Nt7mU9fxL\"] [:rubbish blah blah\"] [:path scripts/\"])])cron.routes=> (keys loadsecrets2)Execution error (IllegalArgumentException) at cron.routes/eval6848 (forminit3768456561690446599.clj:1).Don\\'t know how to create ISeq from: cron.routes$load_secrets2```"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-04-25T12:53:02.370000",
+                        "user": "Thorne",
+                        "text": "I load the file direct i can use keys. Do it via another function i get an error \ud83d\ude26"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-04-25T12:56:41.384000",
+                        "user": "Babou",
+                        "text": "You're passing a function to keys"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-04-25T12:56:47.908000",
+                        "user": "Babou",
+                        "text": "Not what that function returns"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-04-25T12:57:08.368000",
+                        "user": "Babou",
+                        "text": "(keys (loadsecrets2)) should work"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-04-25T12:58:14.983000",
+                        "user": "Thorne",
+                        "text": "lol it does. I do feel silly now thats it been pointed out to me \ud83d\ude42 Thank you \ud83d\ude42"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-04-25T12:58:49.809000",
+                        "user": "Tannen",
+                        "text": "All good I've been working with clojure a while and still make this mistake \ud83d\ude02"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Nov2019-Jan2020",
+        "start_date": "2019-11-01T19:36:28.998000",
+        "end_date": "2019-12-18T09:44:57.362000",
+        "messages": [
+            {
+                "conversation_id": "28",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2019-12-02T05:55:24.422000",
+                        "user": "Hades",
+                        "text": "Hey just a quick question about using loop/recur: Can I have multiple recur statements with a single loop? i.e ```(loop [var x] (cond  (= x a) x (= x b) (recur (+ x 1)) (= x c) (recur (+ x 2))))```"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2019-12-02T05:55:26.603000",
+                        "user": "Hades",
+                        "text": "Or something ilke that?"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2019-12-02T05:57:35.492000",
+                        "user": "Chandru",
+                        "text": "Yes you can"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2019-12-02T05:57:52.867000",
+                        "user": "Chandru",
+                        "text": "As long as they're all in tail position"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2019-12-02T05:58:17.975000",
+                        "user": "Chandru",
+                        "text": "I.e. the last statement in the recur scope"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2019-12-02T06:03:21.613000",
+                        "user": "Hades",
+                        "text": "thank you!"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2019-12-02T06:18:11.346000",
+                        "user": "Abbigail",
+                        "text": "Yeah as long as nothing uses the return value of recur in the scope of the loop or recursive function you're good."
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2019-12-02T06:18:59.459000",
+                        "user": "Abbigail",
+                        "text": "As a general rule anyway Johnny was more precise for sure."
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2019-12-02T06:38:07.831000",
+                        "user": "Hades",
+                        "text": "okie got it"
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2019-12-02T06:38:08.930000",
+                        "user": "Hades",
+                        "text": "Thank you!"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2019-12-02T06:42:14.281000",
+                        "user": "Hades",
+                        "text": "Can I wrap a recur with a let?"
+                    },
+                    {
+                        "message_number": "16",
+                        "ts": "2019-12-02T06:43:19.050000",
+                        "user": "Hades",
+                        "text": "I have something that I need to use twice inside my recur"
+                    },
+                    {
+                        "message_number": "17",
+                        "ts": "2019-12-02T06:43:24.329000",
+                        "user": "Hades",
+                        "text": "But I don't want to compute it twice"
+                    },
+                    {
+                        "message_number": "18",
+                        "ts": "2019-12-02T06:43:47.280000",
+                        "user": "Brix",
+                        "text": "Yup as long as the let is in the tail position and the recur is in the tail of the let."
+                    },
+                    {
+                        "message_number": "20",
+                        "ts": "2019-12-02T06:44:02.372000",
+                        "user": "Hades",
+                        "text": "thank you!"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "May2020-July2020",
+        "start_date": "2020-05-06T05:35:13.419000",
+        "end_date": "2020-07-30T21:37:35.713000",
+        "messages": [
+            {
+                "conversation_id": "13",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-05-31T09:06:18.814000",
+                        "user": "Madigan",
+                        "text": "why is my message getting deleted automatically from here"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-05-31T09:06:40.297000",
+                        "user": "Madigan",
+                        "text": "I am trying to post a code and looking for validation but its gets deleted"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-05-31T09:06:47.468000",
+                        "user": "Maddison",
+                        "text": "that is odd"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-05-31T09:06:54.084000",
+                        "user": "Maddison",
+                        "text": "Can you try again?"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-05-31T09:07:12.733000",
+                        "user": "Madigan",
+                        "text": "I did it goes to botlog"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-05-31T09:07:19.481000",
+                        "user": "Maddison",
+                        "text": "Weird. Post it on https://hasteb.in"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-05-31T09:07:57.818000",
+                        "user": "Maddison",
+                        "text": "you need to save and post the link"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2020-05-31T09:08:13.029000",
+                        "user": "Madigan",
+                        "text": "https://hasteb.in/uvulekuh.sql"
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2020-05-31T09:08:41.134000",
+                        "user": "Madigan",
+                        "text": "Please give feedbacks on the implementation of Sieve_of_Eratosthenes for generating primes"
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2020-05-31T09:08:41.620000",
+                        "user": "Maddison",
+                        "text": "what exactly is your question?"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2020-05-31T09:09:02.107000",
+                        "user": "Madigan",
+                        "text": "Just seeking validations if this is good enough"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2020-05-31T09:10:03.281000",
+                        "user": "Maddison",
+                        "text": "First thing to improve imo would be to make the function a top level declaration"
+                    },
+                    {
+                        "message_number": "15",
+                        "ts": "2020-05-31T09:10:21.801000",
+                        "user": "Maddison",
+                        "text": "so `(defn primenumbers? ...)`"
+                    },
+                    {
+                        "message_number": "17",
+                        "ts": "2020-05-31T09:24:41.428000",
+                        "user": "Madigan",
+                        "text": "Anything else? @Johnny"
+                    },
+                    {
+                        "message_number": "18",
+                        "ts": "2020-05-31T09:25:03.270000",
+                        "user": "Maddison",
+                        "text": "yeah I'm currently thinking about how I would implement this"
+                    },
+                    {
+                        "message_number": "19",
+                        "ts": "2020-05-31T09:27:47.301000",
+                        "user": "Madigan",
+                        "text": "Ok Ok sure Sorry for the probe"
+                    },
+                    {
+                        "message_number": "20",
+                        "ts": "2020-05-31T09:38:16.205000",
+                        "user": "Maddison",
+                        "text": "Ok I would do this rather differently"
+                    },
+                    {
+                        "message_number": "21",
+                        "ts": "2020-05-31T09:38:28.066000",
+                        "user": "Maddison",
+                        "text": "Is it ok if I show you my implementation directly and explain it?"
+                    },
+                    {
+                        "message_number": "22",
+                        "ts": "2020-05-31T09:39:23.169000",
+                        "user": "Maddison",
+                        "text": "There are a few things about yours that are a bit problematic for example it uses .indexOf and last on sequences all of which are O(n)"
+                    },
+                    {
+                        "message_number": "23",
+                        "ts": "2020-05-31T09:44:38.915000",
+                        "user": "Maddison",
+                        "text": "( @Kanishkkumar188nrt )"
+                    },
+                    {
+                        "message_number": "24",
+                        "ts": "2020-05-31T09:45:48.398000",
+                        "user": "Madigan",
+                        "text": "Yes pleaze"
+                    },
+                    {
+                        "message_number": "25",
+                        "ts": "2020-05-31T09:46:05.931000",
+                        "user": "Madigan",
+                        "text": "Please show your implementation"
+                    },
+                    {
+                        "message_number": "26",
+                        "ts": "2020-05-31T09:48:08.296000",
+                        "user": "Maddison",
+                        "text": "```clj(defn sieve [[& [nextprime :as remaining]]] (remove #(zero? (rem % nextprime)) remaining))(defn primes [to] (>> (range 2 to) (iterate sieve) (takewhile seq) (map first)))```"
+                    },
+                    {
+                        "message_number": "27",
+                        "ts": "2020-05-31T09:50:15.381000",
+                        "user": "Maddison",
+                        "text": "`sieve` is a helper function that takes a sequence of numbers ignores the first element treats the second element as the next prime and the rest as the remaining numbers. It then uses `rem` (remainder) to remove all multiples of the next prime from the remaining"
+                    },
+                    {
+                        "message_number": "28",
+                        "ts": "2020-05-31T09:51:51.232000",
+                        "user": "Maddison",
+                        "text": "This is nice for `iterate`. `iterate` takes the initial numbers and produces a sequence of `numbers` `(sieve numbers)` `(sieve (sieve numbers))` and so on"
+                    },
+                    {
+                        "message_number": "29",
+                        "ts": "2020-05-31T09:52:25.867000",
+                        "user": "Maddison",
+                        "text": "This results in a sequence consisting of sequences that each represent one step in the algorithm"
+                    },
+                    {
+                        "message_number": "30",
+                        "ts": "2020-05-31T09:53:01.515000",
+                        "user": "Maddison",
+                        "text": "The end is reached when this produces an empty sequence hence why `(takewhile seq)`"
+                    },
+                    {
+                        "message_number": "31",
+                        "ts": "2020-05-31T09:53:14.847000",
+                        "user": "Maddison",
+                        "text": "The first element of each sequence is a prime."
+                    },
+                    {
+                        "message_number": "32",
+                        "ts": "2020-05-31T09:56:39.979000",
+                        "user": "Maddison",
+                        "text": "This is reasonably more efficient too. Your initial solution took 292 ms for 9927 mine took 0.02 ms"
+                    },
+                    {
+                        "message_number": "33",
+                        "ts": "2020-05-31T09:58:03.046000",
+                        "user": "Maddison",
+                        "text": "If you have trouble understanding anything feel free to ask"
+                    },
+                    {
+                        "message_number": "34",
+                        "ts": "2020-05-31T12:33:38.563000",
+                        "user": "Maddison",
+                        "text": "Well that is something that comes with enough practice. Don't worry if you think you wouldn't have figured this out yourself  I know that feeling. Coding in an imperative language is somewhat of an advantage in this regard because most popular algorithms are often defined or explained imperatively. The sieve of Eratosthenes is a good example for this because it is an inherently imperative algorithm (a set of instructions that you can repeat by hand)."
+                    },
+                    {
+                        "message_number": "35",
+                        "ts": "2020-05-31T12:34:43.905000",
+                        "user": "Maddison",
+                        "text": "And I mean it took me about half an hour to come up with this."
+                    },
+                    {
+                        "message_number": "36",
+                        "ts": "2020-05-31T12:39:14.392000",
+                        "user": "Maddison",
+                        "text": "What I did is the following: I went to wikipedia and looked at the definition of the algorithm there which is tagging indices in a boolean array essentially. I realised that this can also be described as a series of states. In the beginning all numbers are untagged. After the next step all multiples of 2 are tagged. After the next step all multiples of 3 are tagged... and so on and so forth. This is already a functional description. Now the remaining questions are: what does the \\'step\\ function look like that marks the next multiples? and how do I get the relevant prime in each state (2 in the first 3 in the second 5 in the third etc.)?"
+                    },
+                    {
+                        "message_number": "37",
+                        "ts": "2020-05-31T12:41:54.190000",
+                        "user": "Maddison",
+                        "text": "Now the knowledge about `iterate` comes in handy because it gives me a sequence of all states when repeatedly applying a step function. So what I did was I wrote the step function (`sieve`) in a way that does not care about what was relevant in the previous step by skipping the first element in the sequence. That way the first element in each state is the number I care about."
+                    },
+                    {
+                        "message_number": "38",
+                        "ts": "2020-05-31T12:42:54.180000",
+                        "user": "Maddison",
+                        "text": "And I think the rest of the implementation of `sieve` is pretty clear."
+                    },
+                    {
+                        "message_number": "39",
+                        "ts": "2020-05-31T12:43:01.783000",
+                        "user": "Madigan",
+                        "text": "Yes it is"
+                    },
+                    {
+                        "message_number": "40",
+                        "ts": "2020-05-31T12:46:06.561000",
+                        "user": "Madigan",
+                        "text": "The code is so clear in itself that i doesnt need any explanation the explanation to write such code was needed I am reading your explanation again n again to understand better. Thanks @Johnny and Clojurians As helping community only enables the propagation of knowledge."
+                    },
+                    {
+                        "message_number": "41",
+                        "ts": "2020-05-31T12:47:08.629000",
+                        "user": "Maddison",
+                        "text": "You're welcome. Thanks for bringing it up here it's an interesting thing to think about and I really like the result here"
+                    },
+                    {
+                        "message_number": "42",
+                        "ts": "2020-05-31T12:47:37.671000",
+                        "user": "Madigan",
+                        "text": "I have worked with multiple languages and never ever found anyone as welcoming and helping community as Clojure's"
+                    },
+                    {
+                        "message_number": "43",
+                        "ts": "2020-05-31T12:47:59.190000",
+                        "user": "Maddison",
+                        "text": "Same here haha"
+                    },
+                    {
+                        "message_number": "44",
+                        "ts": "2020-05-31T12:48:18.530000",
+                        "user": "Madigan",
+                        "text": "Clojure's community is so helping and uplifting and through out all the mediums be it reddit discord slack or stack overflow"
+                    },
+                    {
+                        "message_number": "45",
+                        "ts": "2020-05-31T13:04:03.324000",
+                        "user": "Madigan",
+                        "text": "When i printed next prime and remaining i got this > remainaing (19 23 29 31 37)>nextprime 23"
+                    },
+                    {
+                        "message_number": "46",
+                        "ts": "2020-05-31T13:04:30.741000",
+                        "user": "Madigan",
+                        "text": "I understood this but how could you do this is there any documentation for it"
+                    },
+                    {
+                        "message_number": "47",
+                        "ts": "2020-05-31T13:04:59.483000",
+                        "user": "Madigan",
+                        "text": "Youre doing some very WHAAAAT the hell kinda things"
+                    },
+                    {
+                        "message_number": "49",
+                        "ts": "2020-05-31T13:05:14.819000",
+                        "user": "Maddison",
+                        "text": "This is called destructuring. It's very powerful. This would be the equivalent without it:```clj(defn sieve [input] (let [remaining (rest input) nextprime (first remaining)] (remove #(zero? (rem % nextprime)) remaining)))```"
+                    },
+                    {
+                        "message_number": "50",
+                        "ts": "2020-05-31T13:05:32.418000",
+                        "user": "Maddison",
+                        "text": "https://clojure.org/guides/destructuring"
+                    },
+                    {
+                        "message_number": "52",
+                        "ts": "2020-05-31T13:06:00.624000",
+                        "user": "Madigan",
+                        "text": "M blown away"
+                    },
+                    {
+                        "message_number": "53",
+                        "ts": "2020-05-31T13:06:34.505000",
+                        "user": "Maddison",
+                        "text": "For a long time I didn't know it existed. Now I find myself using it at every corner"
+                    },
+                    {
+                        "message_number": "54",
+                        "ts": "2020-05-31T13:08:30.574000",
+                        "user": "Madigan",
+                        "text": "I understand destrcuture as i used in javascript but you did something really clever here by using & you made it for consuming multiple arguments and with using :as you selected the first item from that multiple aruments"
+                    },
+                    {
+                        "message_number": "55",
+                        "ts": "2020-05-31T13:08:50.764000",
+                        "user": "Madigan",
+                        "text": "Correct?"
+                    },
+                    {
+                        "message_number": "56",
+                        "ts": "2020-05-31T13:11:39.157000",
+                        "user": "Maddison",
+                        "text": "It's all described thoroughly in the guide I just linked and I recommend reading it but the gist of it: `[& foo]` means that `foo` will be the `rest` of the input  `[foo]` means that `foo` will be the `first` of the input  and `[foo :as bar]` means that `foo` will be the `first` of the input and `bar` will be the original input"
+                    },
+                    {
+                        "message_number": "57",
+                        "ts": "2020-05-31T13:11:50.953000",
+                        "user": "Maddison",
+                        "text": "And this can all be nested as I did here"
+                    },
+                    {
+                        "message_number": "58",
+                        "ts": "2020-05-31T13:16:24.623000",
+                        "user": "Madigan",
+                        "text": "Sure thanks"
+                    },
+                    {
+                        "message_number": "59",
+                        "ts": "2020-05-31T13:16:30.275000",
+                        "user": "Madigan",
+                        "text": "I will go through it"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Feb2020-Apr2020",
+        "start_date": "2020-02-15T23:02:46.362000",
+        "end_date": "2020-04-26T21:17:48.937000",
+        "messages": [
+            {
+                "conversation_id": "4",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-03-14T22:10:51.691000",
+                        "user": "Rhian",
+                        "text": "Hey i was just wondering if anyone could help me i have a sequence of `'(1 2 3 4 5)`And im wanting to find out the index of 5.for example in this case the result would be 4.Is there anything built into clojure to solve this?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-03-14T22:19:15.195000",
+                        "user": "Knowledge",
+                        "text": "`(.indexOf (1 2 3 4 5) 5)`"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-03-14T22:19:32.472000",
+                        "user": "Knowledge",
+                        "text": "None"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-03-14T22:43:20.138000",
+                        "user": "Alistair",
+                        "text": "That works but if you want a lazy sequence of the indices of all matches you could do the following:`(map first (filter #(= 5 (second %)) (mapindexed vector (1 2 3 4 5))))`"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-03-15T02:01:22.778000",
+                        "user": "Rhian",
+                        "text": "\ud83e\udd26\\u200d\u2642\ufe0f Thanks guys"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Feb2020-Apr2020",
+        "start_date": "2020-02-15T23:02:46.362000",
+        "end_date": "2020-04-26T21:17:48.937000",
+        "messages": [
+            {
+                "conversation_id": "24",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-03-30T19:05:21.888000",
+                        "user": "Brienne",
+                        "text": "Does anyone here have experience setting up luminus behind an nginx reverse proxy?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-03-30T19:05:57.299000",
+                        "user": "Vilmar",
+                        "text": "they have great docs for that if I remember correctly"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-03-30T19:06:25.110000",
+                        "user": "Vilmar",
+                        "text": "https://luminusweb.com/docs/deployment.html#fronting_with_nginxhttps://luminusweb.com/docs/deployment.html#fronting_with_nginx"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-03-30T19:06:48.444000",
+                        "user": "Brienne",
+                        "text": "Not for my particular issue unfortunately. I am trying to set it up under a location apart from root"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-03-30T19:08:27.276000",
+                        "user": "Brienne",
+                        "text": "I am having difficulty configuring luminus/jetty to use that path to properly handle links relative to that path"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-03-30T19:08:45.595000",
+                        "user": "Vilmar",
+                        "text": "I think that's a nginx issue then"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-03-30T19:27:56.744000",
+                        "user": "Brienne",
+                        "text": "I'm not so sure. For example suppose I am trying to proxy pass everything under `mysite.com/util/` to the running luminus web app. If luminus has no knowledge of the `/util/` prefix all absolute paths will improperly go to `mysite.com/`."
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-03-30T21:33:44.998000",
+                        "user": "Brienne",
+                        "text": "I determined a workaround by just modifying the `<project>.layout/render` function that comes with the luminus template to the following:```=(defn render= renders the HTML template located relative to = resources/html\"= [request template & [params]]= (contenttype= (ok= (parser/renderfile= template= (assoc params+ :pathprefix (or (env :pathprefix) )+ :selmer/context (or (env :pathprefix) )= :page template= :csrftoken antiforgerytoken)))= text/html; charset=utf8\"))```Then all templates are able to generate links properly by just referencing the `pathprefix` and script/style Selmer tags continue to work as well. Just need to set `PATH_PREFIX` as an environment variable to match the path setup in nginx."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Aug2020-Oct2020",
+        "start_date": "2020-08-01T14:31:40.017000",
+        "end_date": "2020-10-25T03:22:35.633000",
+        "messages": [
+            {
+                "conversation_id": "15",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-09-10T03:02:33.737000",
+                        "user": "Keenan",
+                        "text": "Hi guys how are you? Can I ask some questions?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-09-10T03:02:49.439000",
+                        "user": "Keenan",
+                        "text": "My name is Manuel"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-09-10T03:03:03.737000",
+                        "user": "Keenan",
+                        "text": "I am new to Clojure (I'm still reading a book about it I haven't worked on a project before. I come from the world of Elixir)"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-09-10T03:03:16.862000",
+                        "user": "Keenan",
+                        "text": "Right now I'm on a technologies choice process for a project that I'm going to start with a friend"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-09-10T03:03:31.493000",
+                        "user": "Keenan",
+                        "text": "A project related to the area of Civil EngineeringThere will be a lot of formulas Maths Calculus limits derivatives logarithms etc.My friend is a Civil Engineer so he puts the formulas and I put the programming part"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-09-10T03:03:45.830000",
+                        "user": "Keenan",
+                        "text": "Besides it will be necessary to visualize data in the form of 2D and 3D charts"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-09-10T03:04:00.494000",
+                        "user": "Keenan",
+                        "text": "We want at first to develop a desktop applicationI think Python does an excellent job on that field so it's not discarded I know Python and it would be easier for me"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-09-10T03:04:18.819000",
+                        "user": "Keenan",
+                        "text": "I also thought on doing it with Qt which is an excellent framework for desktop applications. Besides C++ is a mature technology and I know that any issue that I face during development will have been solved by anyone in the past"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2020-09-10T03:04:32.856000",
+                        "user": "Keenan",
+                        "text": "The problem with C++ is that I'm not a big fan of OOP"
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2020-09-10T03:04:45.596000",
+                        "user": "Keenan",
+                        "text": "But I want to do it with Clojure I want to consider Clojure because I think that it would be the best way for me to learn the language well. It's just that the lack of knowledge I have about Clojure doesn't let me take a decision on using or if it will solve my problem"
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2020-09-10T03:04:58.550000",
+                        "user": "Keenan",
+                        "text": "I would like to ask please:"
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2020-09-10T03:05:16.063000",
+                        "user": "Keenan",
+                        "text": "1. Which framework do you recommend to create the type of desktop application that I need? I've seen a lot of options but I don't know how to decide"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2020-09-10T03:05:30.588000",
+                        "user": "Keenan",
+                        "text": "2. Do you think Clojure have the right libraries for Data Visualization and for complex Math and Calculus topics like the ones I told you about?"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2020-09-10T03:05:44.573000",
+                        "user": "Keenan",
+                        "text": "3. Do those Data Visualization libraries if they exist can be used and integrated with the desktoporiented frameworks? Or it's just for web?"
+                    },
+                    {
+                        "message_number": "15",
+                        "ts": "2020-09-10T03:05:56.773000",
+                        "user": "Keenan",
+                        "text": "4. What should I do to export the final project to an installable executable .exe for Windows? Does that exist on Clojure? Can we do that? I use Linux but if the project goes well our clients would be using Windows mostly"
+                    },
+                    {
+                        "message_number": "16",
+                        "ts": "2020-09-10T03:06:10.814000",
+                        "user": "Keenan",
+                        "text": "5. Is there good documentation about these libraries in the case they exist?"
+                    },
+                    {
+                        "message_number": "17",
+                        "ts": "2020-09-10T03:06:24.472000",
+                        "user": "Keenan",
+                        "text": "I'd aprecciate if you could comment me your experience. I think Clojure is very powerful but I want to take a good decision on which technology to choose because at the end I don't wanna have a technical debt"
+                    },
+                    {
+                        "message_number": "18",
+                        "ts": "2020-09-10T03:26:01.334000",
+                        "user": "Emersen",
+                        "text": "Desktop applications aren't super common to be made in Clojure. You could use either electron with CLJS but that'd be a bit complicated. Halgari's fnfx is probably a good place to go if you want something really functional but also seesaw is quite good if you want something simple but closer to java's style."
+                    },
+                    {
+                        "message_number": "19",
+                        "ts": "2020-09-10T03:26:50.032000",
+                        "user": "Emersen",
+                        "text": "As for library support clojure has many libraries of its own yes but for nearly any topic that you can't find a good library for clojure you can find a decent library for java which you can use from clojure easily."
+                    },
+                    {
+                        "message_number": "20",
+                        "ts": "2020-09-10T03:27:35.194000",
+                        "user": "Emersen",
+                        "text": "As for making an installer java in general doesn't do that as their default manner of working with programs. Nearly any extractiontype installer will be decent for the resulting application however."
+                    },
+                    {
+                        "message_number": "21",
+                        "ts": "2020-09-10T15:22:33.679000",
+                        "user": "Aja",
+                        "text": "> Desktop applications aren't super common to be made in Clojure. You could use either electron with CLJS but that'd be a bit complicated. Halgari's fnfx is probably a good place to go if you want something really functional but also seesaw is quite good if you want something simple but closer to java's style.@srasu FWIW I would probably look at `cljfx` rather than `fnfx` if you're looking to do a JavaFX desktop app in Clojure. It's more modern and uses more recent design approaches."
+                    },
+                    {
+                        "message_number": "22",
+                        "ts": "2020-09-10T15:23:00.629000",
+                        "user": "Emersen",
+                        "text": "fair enough"
+                    },
+                    {
+                        "message_number": "23",
+                        "ts": "2020-09-10T15:23:33.106000",
+                        "user": "Aja",
+                        "text": "(background: I was working on a desktop app a few years ago and as part of that did a bit of work on `fnfx` to update it but then the project kind of fell apart so I haven't revisited since then)"
+                    },
+                    {
+                        "message_number": "24",
+                        "ts": "2020-09-12T05:34:53.031000",
+                        "user": "Emersen",
+                        "text": "If you have a decent editor it should Just Work\u2122\ufe0f otherwise figwheelmain has some instructions on how to switch repls"
+                    },
+                    {
+                        "message_number": "25",
+                        "ts": "2020-09-12T05:49:54.770000",
+                        "user": "Emersen",
+                        "text": "right but you should be able to integrate the two by having the figwheel lein plugin injected by cider and starting the repl that way."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Feb2020-Apr2020",
+        "start_date": "2020-02-15T23:02:46.362000",
+        "end_date": "2020-04-26T21:17:48.937000",
+        "messages": [
+            {
+                "conversation_id": "29",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-04-01T15:56:03.019000",
+                        "user": "Alistair",
+                        "text": "Anybody around with a lot of async experience? I'm getting what I consider strange behavior where after calling shutdownagents my program still won't exit and seems to have nondaemon threads going on. It has a lot of core.async go blocks and agent usage but nothing too weird."
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-04-01T16:27:40.082000",
+                        "user": "Brienne",
+                        "text": "@srasu I do not think that `shutdownagents` has any effect on threads/threadpools that are created from clojure.core.async (`thread`/`go`). I believe that it only interacts with the Agent subsystem of clojure.core (`agent` `send` and `sendoff`)."
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-04-01T16:29:07.682000",
+                        "user": "Alistair",
+                        "text": "Then I'm definitely curious because I've never had issues shutting down applications with live goloops before."
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-04-01T16:31:31.331000",
+                        "user": "Brienne",
+                        "text": "Do you have any blocking/IO actions going on in your go processes?"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-04-01T16:34:00.369000",
+                        "user": "Alistair",
+                        "text": "Just waiting on channels."
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-04-01T16:34:03.611000",
+                        "user": "Alistair",
+                        "text": "so parking"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-04-01T16:35:48.005000",
+                        "user": "Brienne",
+                        "text": "Try closing all of your channels instead. That will allow your go blocks to terminate"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-04-01T16:36:45.830000",
+                        "user": "Alistair",
+                        "text": "That... would be a challenge. Might be possible but we'll see."
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2020-04-01T16:38:02.594000",
+                        "user": "Alistair",
+                        "text": "Wait nevermind. That's weird."
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2020-04-01T16:39:18.858000",
+                        "user": "Alistair",
+                        "text": "Actually it looks like I exit the go block."
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2020-04-01T16:45:43.326000",
+                        "user": "Alistair",
+                        "text": "Yeah so in theory there's no go blocks running and no agents since I call shutdownagents. It's just weird."
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2020-04-01T17:12:04.786000",
+                        "user": "Alistair",
+                        "text": "Turns out it was actually some dumb undocumented stuff about the websocket library I was using"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2020-04-01T17:13:09.057000",
+                        "user": "Alistair",
+                        "text": "Yeah because I was going down a layer and creating my own websocket client from jetty I had to manually call .stop on them."
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2020-04-01T18:22:18.790000",
+                        "user": "Brienne",
+                        "text": "Ouch. Not fun. Glad you got it resolved at least"
+                    },
+                    {
+                        "message_number": "15",
+                        "ts": "2020-04-01T18:28:03.249000",
+                        "user": "Alistair",
+                        "text": "Yeah me too. Should help with people using my discord library"
+                    },
+                    {
+                        "message_number": "16",
+                        "ts": "2020-04-20T14:01:06.093000",
+                        "user": "Bettina",
+                        "text": "That would be async"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "May2020-July2020",
+        "start_date": "2020-05-06T05:35:13.419000",
+        "end_date": "2020-07-30T21:37:35.713000",
+        "messages": [
+            {
+                "conversation_id": "1",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-05-06T05:35:13.419000",
+                        "user": "Azahel",
+                        "text": "HelloI have multiple agents for example 100s of agents.They can have three value Below zero Above Zero And zero.At a particular instant of time I want to print how many agents are above zero zero and below zero.Can someone please guide me how to do it? I am new to the clojure code."
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-05-06T05:36:04.963000",
+                        "user": "Savvi",
+                        "text": "Do you have a collection of all agents?"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-05-06T15:20:32.296000",
+                        "user": "Azahel",
+                        "text": "Yes @isenjov I have collection of agents.I am just modifying Rich Hickey's ant colony simulation."
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-05-06T15:22:17.590000",
+                        "user": "Azahel",
+                        "text": "@gibb I do have a sequence of agents.I want to somehow update a count variable which would be shared by all the agents to update it. when all the agents update the variable i ll print the count."
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-05-06T15:22:58.458000",
+                        "user": "Azahel",
+                        "text": "@gibb"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-05-06T15:23:12.253000",
+                        "user": "Azahel",
+                        "text": "@lsenjov"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Feb2020-Apr2020",
+        "start_date": "2020-02-15T23:02:46.362000",
+        "end_date": "2020-04-26T21:17:48.937000",
+        "messages": [
+            {
+                "conversation_id": "31",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-04-11T10:43:34.376000",
+                        "user": "Babou",
+                        "text": "Is there an alternative to datomic regarding functional dbs in clojure? datomic looks cool and all but only the starter kit is free and it's not open source. I haven't really looked that deeply into it but I presume it's enough for smaller and personal use cases?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-04-11T11:01:27.233000",
+                        "user": "Tannen",
+                        "text": "I hear a good amount about Crux haven't used it myself though"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-04-20T10:16:39.450000",
+                        "user": "Babou",
+                        "text": "There is `alt` in core.async but is there something like `and` that reads input from channels in whatever order it comes in?"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-04-20T10:17:56.885000",
+                        "user": "Babou",
+                        "text": "For example I have channel one and two. I want to take something from both of them but I don't care whether one or two delivers first"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-04-20T14:08:32.791000",
+                        "user": "Babou",
+                        "text": "What do you mean?"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-04-20T15:31:05.925000",
+                        "user": "Babou",
+                        "text": "I don't understand your point"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-04-20T15:31:11.316000",
+                        "user": "Babou",
+                        "text": "Of course it's async"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-04-20T15:31:19.552000",
+                        "user": "Babou",
+                        "text": "We're talking about core.async after all"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2020-04-20T15:32:46.615000",
+                        "user": "Babou",
+                        "text": "Building the logic of `and` is possible with the existing macros/functions but I was wondering whether something like this already exists"
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2020-04-20T15:33:20.402000",
+                        "user": "Osmundo",
+                        "text": "I actually wrote something that does that a few days ago cus I couldn't find a solution in core.async."
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2020-04-20T15:33:30.165000",
+                        "user": "Osmundo",
+                        "text": "But I might have missed something."
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2020-04-20T15:59:17.915000",
+                        "user": "Babou",
+                        "text": "What `or`? Do you mean `alts!`?"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2020-04-20T15:59:44.934000",
+                        "user": "Babou",
+                        "text": "Different semantics"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2020-04-20T17:44:06.177000",
+                        "user": "Alistair",
+                        "text": "I wish there were a good parking and in core.async by default yeah. As it is the simplest way to do it is like so:```clojure(let [chans ...] (a/<! (a/thread (map a/<!! chans))))```"
+                    },
+                    {
+                        "message_number": "15",
+                        "ts": "2020-04-20T17:44:51.278000",
+                        "user": "Alistair",
+                        "text": "This spawns a new thread that blocks on taking off each channel and the return value of map is put onto a channel. That channel is parked on by the outer execution context."
+                    },
+                    {
+                        "message_number": "16",
+                        "ts": "2020-04-20T17:45:12.299000",
+                        "user": "Osmundo",
+                        "text": "what if you're working in cljs"
+                    },
+                    {
+                        "message_number": "17",
+                        "ts": "2020-04-20T17:45:31.809000",
+                        "user": "Osmundo",
+                        "text": "Wrong channel I suppose"
+                    },
+                    {
+                        "message_number": "18",
+                        "ts": "2020-04-20T17:45:33.611000",
+                        "user": "Alistair",
+                        "text": "good question. I'm not 100% sure."
+                    },
+                    {
+                        "message_number": "19",
+                        "ts": "2020-04-20T17:45:50.861000",
+                        "user": "Osmundo",
+                        "text": "Short answer is you need some fairly arcane loop trickery."
+                    },
+                    {
+                        "message_number": "20",
+                        "ts": "2020-04-20T17:46:00.299000",
+                        "user": "Osmundo",
+                        "text": "And `alts!`"
+                    },
+                    {
+                        "message_number": "21",
+                        "ts": "2020-04-20T17:46:51.205000",
+                        "user": "Osmundo",
+                        "text": "You loop on `alts!` each iteration removing the channel you just took from and passing the rest back in."
+                    },
+                    {
+                        "message_number": "22",
+                        "ts": "2020-04-20T17:47:31.124000",
+                        "user": "Alistair",
+                        "text": "Yeah I dislike that because it's complex and requires more thread overhead. However it doesn't require an additional thread so that can be a bonus."
+                    },
+                    {
+                        "message_number": "23",
+                        "ts": "2020-04-20T17:52:18.557000",
+                        "user": "Osmundo",
+                        "text": "```clj(defn asyncall [chans] (goloop [chanset (set chans) res {}] (if (seq chanset) (let [[val chan] (alts! chanset)] (recur (disj chanset chan) (assoc res chan val))) (into [] (map res chans)))```Or something like that."
+                    },
+                    {
+                        "message_number": "24",
+                        "ts": "2020-04-20T17:53:14.087000",
+                        "user": "Osmundo",
+                        "text": "My original version was inline and collected the results slightly differently plus I don't have it on hand rn \ud83d\ude05"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Aug2020-Oct2020",
+        "start_date": "2020-08-01T14:31:40.017000",
+        "end_date": "2020-10-25T03:22:35.633000",
+        "messages": [
+            {
+                "conversation_id": "3",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-08-02T09:28:39.949000",
+                        "user": "Aleck",
+                        "text": "@Johnny I'm planning to write a small application in a sensitive office floor on which I probably wont be able to install mysql / postgres or similar you see ?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-08-02T09:28:59.911000",
+                        "user": "Aleck",
+                        "text": "so far all I have by default is java se 1.6"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-08-02T09:29:00.317000",
+                        "user": "Tashon",
+                        "text": "So you're looking for an embeddable database"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-08-02T09:29:26.797000",
+                        "user": "Aleck",
+                        "text": "and any persistent db is alright to me I'll manage"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-08-02T09:29:49.836000",
+                        "user": "Aleck",
+                        "text": "I stepped on the line fetching clojure and core.logic jars"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-08-02T09:30:05.204000",
+                        "user": "Tashon",
+                        "text": "SQLite with next.jdbc would perhaps be an option"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-08-02T09:30:05.461000",
+                        "user": "Aleck",
+                        "text": "(and sqlite binary too)"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2020-08-02T09:30:13.454000",
+                        "user": "Tashon",
+                        "text": "Or datahike which can be file based"
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2020-08-02T09:31:36.492000",
+                        "user": "Aleck",
+                        "text": "I see next.jdbc has no external dependency which is good"
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2020-08-02T09:31:50.106000",
+                        "user": "Aleck",
+                        "text": "the less jars the better I suppose"
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2020-08-02T09:32:00.944000",
+                        "user": "Tashon",
+                        "text": "Well you'd need the sqlite driver additionally"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2020-08-02T09:32:28.555000",
+                        "user": "Aleck",
+                        "text": "damn yeah I forgot"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2020-08-02T09:32:58.744000",
+                        "user": "Aleck",
+                        "text": "unless I develop it locally and make a single uberjar with whatever is required"
+                    },
+                    {
+                        "message_number": "15",
+                        "ts": "2020-08-02T09:33:59.546000",
+                        "user": "Aleck",
+                        "text": "I think I will go with datahike"
+                    },
+                    {
+                        "message_number": "16",
+                        "ts": "2020-08-02T09:34:32.953000",
+                        "user": "Aleck",
+                        "text": "it's not a large thing ~10 users low frequency and low amounts of data"
+                    },
+                    {
+                        "message_number": "17",
+                        "ts": "2020-08-02T09:37:13.447000",
+                        "user": "Tashon",
+                        "text": "Then it may also be sufficient to just `pr` clojure data structures directly to files"
+                    },
+                    {
+                        "message_number": "18",
+                        "ts": "2020-08-02T09:46:31.690000",
+                        "user": "Aleck",
+                        "text": "as in zero libs ?"
+                    },
+                    {
+                        "message_number": "19",
+                        "ts": "2020-08-02T09:46:46.292000",
+                        "user": "Aleck",
+                        "text": "I like the idea of learning datalog so datahike appeals to me"
+                    },
+                    {
+                        "message_number": "20",
+                        "ts": "2020-08-02T10:01:08.631000",
+                        "user": "Tashon",
+                        "text": "> as in zero libs ?@agumonkey yes"
+                    },
+                    {
+                        "message_number": "21",
+                        "ts": "2020-08-02T10:01:31.879000",
+                        "user": "Tashon",
+                        "text": "on such a low scale pretty much any database is overkill"
+                    },
+                    {
+                        "message_number": "22",
+                        "ts": "2020-08-02T10:01:45.124000",
+                        "user": "Aleck",
+                        "text": "but I need history"
+                    },
+                    {
+                        "message_number": "23",
+                        "ts": "2020-08-02T10:01:49.072000",
+                        "user": "Aleck",
+                        "text": "and datahike has that built in"
+                    },
+                    {
+                        "message_number": "24",
+                        "ts": "2020-08-02T10:01:53.992000",
+                        "user": "Tashon",
+                        "text": "but if you wanna learn datalog and it's in the range of your possibilities then go for it"
+                    },
+                    {
+                        "message_number": "25",
+                        "ts": "2020-08-02T10:02:23.121000",
+                        "user": "Aleck",
+                        "text": "(I didn't know that before I read the github intro)"
+                    },
+                    {
+                        "message_number": "26",
+                        "ts": "2020-08-02T10:18:07.262000",
+                        "user": "Tashon",
+                        "text": "http://www.learndatalogtoday.org/"
+                    },
+                    {
+                        "message_number": "27",
+                        "ts": "2020-08-02T10:18:30.312000",
+                        "user": "Tashon",
+                        "text": "recommendable"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "May2020-July2020",
+        "start_date": "2020-05-06T05:35:13.419000",
+        "end_date": "2020-07-30T21:37:35.713000",
+        "messages": [
+            {
+                "conversation_id": "30",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-06-12T15:47:56.259000",
+                        "user": "Maddison",
+                        "text": "does anybody use babashka and know what's the best way to run a subprocess?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-06-12T16:18:45.782000",
+                        "user": "Maddison",
+                        "text": "yup I am"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-06-12T23:16:07.870000",
+                        "user": "Maddison",
+                        "text": "Is there any way to say use this executor for this specific go block in core.async?"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-06-12T23:20:55.548000",
+                        "user": "Hampton",
+                        "text": "I don't believe so"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2020-06-12T23:22:04.684000",
+                        "user": "Maddison",
+                        "text": "That is really tragic"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2020-06-12T23:22:59.825000",
+                        "user": "Maddison",
+                        "text": "It should really be a thing considering that many frameworks and libraries require you to use specific threads or thread pools"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2020-06-13T08:28:04.163000",
+                        "user": "Maddison",
+                        "text": "Yeah I don't mean globally"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2020-06-16T12:02:57.427000",
+                        "user": "Maddison",
+                        "text": "I specifically want to look into raw TCP not websockets or anything else on top"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Aug2020-Oct2020",
+        "start_date": "2020-08-01T14:31:40.017000",
+        "end_date": "2020-10-25T03:22:35.633000",
+        "messages": [
+            {
+                "conversation_id": "5",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2020-08-04T11:34:30.881000",
+                        "user": "Tamsyn",
+                        "text": "Hi I made a function and I want to know does this idea have a name or even a builtin function in Clojure?```(defn iteratecumulative [start coll] (cons start (lazyseq (iteratecumulative (+ start (first coll)) (rest coll)))))```use```misc.core> (take 7 (iteratecumulative 10 (cycle (0 1))))(10 10 11 11 12 12 13)```"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2020-08-04T11:37:45.977000",
+                        "user": "Tamsyn",
+                        "text": "I have tried to use the regular reduce function with a lazy infinite collection but it doesn't work"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2020-08-04T11:47:07.333000",
+                        "user": "Tamsyn",
+                        "text": "OMG I found it. As always when I ask a question somewhereIt is called `reductions````misc.core> (take 7 (reductions + 10 (cycle (0 1))))(10 10 11 11 12 12 13)```"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2020-08-04T11:47:58.028000",
+                        "user": "Tashon",
+                        "text": "ah yeah great function. Have used it in the past"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "team_domain": "Clojurians",
+        "channel_name": "clojure",
+        "month": "Nov2019-Jan2020",
+        "start_date": "2019-11-01T19:36:28.998000",
+        "end_date": "2019-12-18T09:44:57.362000",
+        "messages": [
+            {
+                "conversation_id": "21",
+                "List of text": [
+                    {
+                        "message_number": "1",
+                        "ts": "2019-11-14T11:36:14.970000",
+                        "user": "Onur",
+                        "text": "hey folks; is there an easy way to freeze time in tests?"
+                    },
+                    {
+                        "message_number": "2",
+                        "ts": "2019-11-14T11:48:10.518000",
+                        "user": "Jaxiel",
+                        "text": "Like pause half way through?"
+                    },
+                    {
+                        "message_number": "3",
+                        "ts": "2019-11-14T11:48:24.301000",
+                        "user": "Jaxiel",
+                        "text": "And open up a repl?"
+                    },
+                    {
+                        "message_number": "4",
+                        "ts": "2019-11-14T11:50:15.936000",
+                        "user": "Onur",
+                        "text": "i have a function that adds timestamps to a map and want to test that it adds the correct time"
+                    },
+                    {
+                        "message_number": "5",
+                        "ts": "2019-11-14T11:51:00.630000",
+                        "user": "Onur",
+                        "text": "in ruby i would do smth like ```rubyTimecop.freeze(Time.now) do # do my tests here  # time will be frozenend```"
+                    },
+                    {
+                        "message_number": "6",
+                        "ts": "2019-11-14T11:52:02.165000",
+                        "user": "Jaxiel",
+                        "text": "Ohhh you're wanting to mock getting time?"
+                    },
+                    {
+                        "message_number": "7",
+                        "ts": "2019-11-14T11:52:28.359000",
+                        "user": "Onur",
+                        "text": "exactly; found an article about it that suggest in can be done but it's from 2012 :/"
+                    },
+                    {
+                        "message_number": "8",
+                        "ts": "2019-11-14T11:52:51.801000",
+                        "user": "Jaxiel",
+                        "text": "It's probably still fine. Clojure libraries don't change much"
+                    },
+                    {
+                        "message_number": "9",
+                        "ts": "2019-11-14T11:53:00.899000",
+                        "user": "Jaxiel",
+                        "text": "Send link"
+                    },
+                    {
+                        "message_number": "10",
+                        "ts": "2019-11-14T12:00:16.266000",
+                        "user": "Onur",
+                        "text": "http://blog.jayfields.com/2012/11/clojurefreezingtimeaddedto.html"
+                    },
+                    {
+                        "message_number": "11",
+                        "ts": "2019-11-14T12:00:40.288000",
+                        "user": "Onur",
+                        "text": "also i have no idea which time library to use"
+                    },
+                    {
+                        "message_number": "12",
+                        "ts": "2019-11-14T12:00:49.828000",
+                        "user": "Onur",
+                        "text": "it's pretty confusing for a beginner"
+                    },
+                    {
+                        "message_number": "13",
+                        "ts": "2019-11-14T12:02:26.123000",
+                        "user": "Jaxiel",
+                        "text": "Joda time will do you fine it's a wellused library"
+                    },
+                    {
+                        "message_number": "14",
+                        "ts": "2019-11-14T12:03:39.085000",
+                        "user": "Jaxiel",
+                        "text": "Otherwise... pick one and play with it and see if you like it?"
+                    },
+                    {
+                        "message_number": "15",
+                        "ts": "2019-11-14T12:06:14.244000",
+                        "user": "Jaxiel",
+                        "text": "Huh... actually maybe not joda time apparently it's fallen out"
+                    },
+                    {
+                        "message_number": "16",
+                        "ts": "2019-11-14T12:06:52.811000",
+                        "user": "Onur",
+                        "text": "just checked it and it provides a mock clock"
+                    },
+                    {
+                        "message_number": "17",
+                        "ts": "2019-11-14T12:07:14.507000",
+                        "user": "Jaxiel",
+                        "text": "Aye just looking at```The Joda Time website says: Note that from Java SE 8 onwards users are asked to migrate to java.time (JSR310)  a core part of the JDK which replaces this project.```"
+                    },
+                    {
+                        "message_number": "18",
+                        "ts": "2019-11-14T12:07:28.764000",
+                        "user": "Jaxiel",
+                        "text": "But it should still do you decently"
+                    },
+                    {
+                        "message_number": "19",
+                        "ts": "2019-11-14T12:07:32.133000",
+                        "user": "Onur",
+                        "text": "yup that's what i'm using atm"
+                    },
+                    {
+                        "message_number": "20",
+                        "ts": "2019-11-14T12:15:29.108000",
+                        "user": "Onur",
+                        "text": "wrapping my test in with `(withclock (mockclock 0) ... ` lock time to `19700101` \ud83c\udf89"
+                    },
+                    {
+                        "message_number": "21",
+                        "ts": "2019-11-14T12:15:54.039000",
+                        "user": "Onur",
+                        "text": "thanks for the help!"
+                    },
+                    {
+                        "message_number": "22",
+                        "ts": "2019-11-14T12:16:45.156000",
+                        "user": "Onur",
+                        "text": "next time I'll read the readme carefully \ud83d\ude04"
+                    }
+                ]
+            }
+        ]
+    }
+]
