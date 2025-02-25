@@ -22,7 +22,6 @@ This replication package contains:
 ```
 SENIR-Replication-Package/
 ├── scripts/
-├── results/
 ├── data/
 │   ├── raw/               
 │   └── processed/
