@@ -5,11 +5,11 @@ Welcome to the **SENIR** (SoftwarE-specific Named entity recognition, Intent det
 > *Submitted to IEEE Transactions on Software Engineering (TSE), 2025*
 
 **Authors**:  
-- Pouya Fathollahzadeh, Student Member, IEEE  
-- Mariam El Mezouar , Fellow, IEEE  
-- Hao Li , Fellow, IEEE  
-- Ying Zou , Fellow, IEEE  
-- Ahmed E. Hassan, Fellow, IEEE  
+- Pouya Fathollahzadeh,
+- Mariam El Mezouar ,
+- Hao Li , Fellow,   
+- Ying Zou   
+- Ahmed E. Hassan
 
 ## Overview
 This replication package contains:
@@ -96,21 +96,17 @@ python scripts/3_model_training.py
 ```
 python scripts/RQ1_analysis.py
 ```
-- Compares SENIR predictions with manually annotated “golden” data
-- Outputs metrics (Accuracy, Precision, Recall, F1, Cohen's Kappa)
 
 **RQ2**: Identify influential features for resolution
 ```
 python scripts/RQ2_analysis.py
 ```
-- Logistic & Mixed-Effect models, plus SHAP / correlation analysis to find top predictive features
 
 **RQ3**: Examine entity-intent interactions
 ```
 python scripts/RQ3_analysis.py
 ```
-- Computes entity-intent co-occurrence & resolution success
-- Performs Chi-Square analysis & visualizations (heatmap, bar plots)
+
 
 ## Results
 
